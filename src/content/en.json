@@ -1,0 +1,126 @@
+{
+  "meta": {
+    "brand": "Mike Dro",
+    "roleLine": "Platform Engineer | Terraform | AWS | Cloud & Backend"
+  },
+  "nav": {
+    "about": "About",
+    "career": "Career",
+    "impact": "Impact",
+    "skills": "Skills",
+    "contact": "Contact"
+  },
+  "hero": {
+    "title": "Building secure, scalable platform foundations for data teams.",
+    "description": "I design and automate cloud infrastructure products that improve reliability, delivery speed, and developer experience across modern data platforms.",
+    "primaryCta": "Let's connect",
+    "secondaryCta": "View impact highlights",
+    "careerTitle": "Career Snapshot",
+    "careerLead": "Full-stack foundations -> Cloud integration engineering -> Platform leadership.",
+    "careerPointOne": "I currently build product-style infrastructure with Terraform, Go, and AWS, with a strong focus on security and standardization.",
+    "careerPointTwo": "I also mentor teammates, shape architecture decisions, and coordinate cross-team implementation workflows."
+  },
+  "about": {
+    "title": "About",
+    "description": "I enjoy building platform products that let engineering teams move faster without compromising reliability or security. My experience spans full-stack delivery, cloud integrations, and platform engineering, with a strong focus on reusable infrastructure, maintainable workflows, and measurable delivery outcomes."
+  },
+  "careerPath": {
+    "eyebrow": "Career path",
+    "title": "From product delivery to platform engineering",
+    "items": [
+      {
+        "role": "Platform Engineer",
+        "period": "Current role",
+        "summary": "Designing and delivering product-style infrastructure for data teams with security and operational reliability built in.",
+        "highlights": [
+          "Terraform-based infrastructure standardization across environments",
+          "Testing strategy adoption with Go, Terratest, and Terraform tests",
+          "Architecture decision ownership and mentoring of new teammates"
+        ]
+      },
+      {
+        "role": "Cloud Developer",
+        "period": "Previous role",
+        "summary": "Implemented reusable Azure integrations to connect internal systems and external tools with reliable async flows.",
+        "highlights": [
+          "Azure Functions + Logic Apps reusable integration patterns",
+          "Asynchronous synchronization for Shopify and legacy backends",
+          "Design-pattern-driven implementation for maintainability"
+        ]
+      },
+      {
+        "role": "Full-stack Developer",
+        "period": "Previous role",
+        "summary": "Delivered end-to-end survey products from frontend UX to secure backend API access.",
+        "highlights": [
+          "Reactive Angular application for client survey flows",
+          "Java/Spring Boot API backed by OracleDB",
+          "Secure data exposure and controlled access architecture"
+        ]
+      }
+    ]
+  },
+  "impact": {
+    "eyebrow": "Selected impact",
+    "title": "Anonymized, outcome-focused case highlights",
+    "cards": [
+      {
+        "title": "Environment-agnostic MWAA delivery",
+        "description": "Automated Airflow on AWS MWAA with Terraform templates so one configuration model works across deployment environments."
+      },
+      {
+        "title": "Internal IaaS for Data Engineering",
+        "description": "Delivered dynamic provisioning workflows across AWS, Snowflake, dbt Cloud, and Fivetran with security as a first-class concern."
+      },
+      {
+        "title": "Testing strategy adoption",
+        "description": "Spearheaded integration testing with Go + Terratest and promoted Terraform tests to reduce infra regressions before release."
+      },
+      {
+        "title": "Architecture decision leadership",
+        "description": "Led implementation patterns across platform initiatives, deciding when Terraform should be standardized and where alternative approaches were better."
+      },
+      {
+        "title": "Cloud systems integration on Azure",
+        "description": "Built reusable Azure Functions and Logic Apps to connect internal systems with external tools and stabilize asynchronous synchronization workflows."
+      },
+      {
+        "title": "Secure full-stack data delivery",
+        "description": "Delivered a reactive Angular survey frontend and co-developed a Java/Spring Boot API with OracleDB to expose collected data through secure services."
+      }
+    ]
+  },
+  "skills": {
+    "title": "Core stack",
+    "groups": [
+      {
+        "category": "Cloud & Data Platforms",
+        "items": ["AWS", "Azure", "Snowflake", "dbt Cloud", "Fivetran"]
+      },
+      {
+        "category": "Infrastructure as Code",
+        "items": ["Terraform", "Module Design", "Environment Standardization"]
+      },
+      {
+        "category": "Backend & Automation",
+        "items": ["Golang", "Java", "Spring Boot", "Serverless Functions"]
+      },
+      {
+        "category": "Quality, Delivery & Collaboration",
+        "items": [
+          "Terratest",
+          "Terraform Testing",
+          "CI/CD",
+          "Architecture Decisions",
+          "Technical Mentoring"
+        ]
+      }
+    ]
+  },
+  "contact": {
+    "eyebrow": "Contact",
+    "description": "Open to platform engineering opportunities.",
+    "emailCta": "Send email",
+    "linkedinCta": "LinkedIn"
+  }
+}

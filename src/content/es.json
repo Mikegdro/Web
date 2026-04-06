@@ -1,0 +1,126 @@
+{
+  "meta": {
+    "brand": "Mike Dro",
+    "roleLine": "Platform Engineer | Terraform | AWS | Cloud & Backend"
+  },
+  "nav": {
+    "about": "Sobre mi",
+    "career": "Carrera",
+    "impact": "Impacto",
+    "skills": "Habilidades",
+    "contact": "Contacto"
+  },
+  "hero": {
+    "title": "Construyendo bases de plataforma seguras y escalables para equipos de datos.",
+    "description": "Diseno y automatizo productos de infraestructura cloud que mejoran confiabilidad, velocidad de entrega y experiencia de desarrollo en plataformas de datos modernas.",
+    "primaryCta": "Conectemos",
+    "secondaryCta": "Ver impacto",
+    "careerTitle": "Resumen profesional",
+    "careerLead": "Bases full-stack -> integraciones cloud -> liderazgo de plataforma.",
+    "careerPointOne": "Actualmente construyo infraestructura orientada a producto con Terraform, Go y AWS, con fuerte enfoque en seguridad y estandarizacion.",
+    "careerPointTwo": "Tambien mentoreo a companeros, participo en decisiones de arquitectura y coordino flujos de implementacion entre equipos."
+  },
+  "about": {
+    "title": "Sobre mi",
+    "description": "Disfruto crear productos de plataforma que permiten a los equipos de ingenieria avanzar mas rapido sin comprometer confiabilidad ni seguridad. Mi experiencia combina desarrollo full-stack, integraciones cloud e ingenieria de plataforma, con foco en infraestructura reusable, workflows mantenibles y resultados medibles."
+  },
+  "careerPath": {
+    "eyebrow": "Trayectoria",
+    "title": "De entrega de producto a ingenieria de plataforma",
+    "items": [
+      {
+        "role": "Platform Engineer",
+        "period": "Rol actual",
+        "summary": "Disenando y entregando infraestructura orientada a producto para equipos de datos, con seguridad y confiabilidad operativa como base.",
+        "highlights": [
+          "Estandarizacion de infraestructura con Terraform entre entornos",
+          "Adopcion de testing con Go, Terratest y pruebas de Terraform",
+          "Ownership de decisiones de arquitectura y mentoria a nuevos companeros"
+        ]
+      },
+      {
+        "role": "Cloud Developer",
+        "period": "Rol previo",
+        "summary": "Implementando integraciones reutilizables en Azure para conectar sistemas internos y herramientas externas con flujos asincronos confiables.",
+        "highlights": [
+          "Patrones reutilizables con Azure Functions + Logic Apps",
+          "Sincronizacion asincrona entre Shopify y backends legados",
+          "Implementaciones guiadas por patrones de diseno para mantenibilidad"
+        ]
+      },
+      {
+        "role": "Full-stack Developer",
+        "period": "Rol previo",
+        "summary": "Entregando productos end-to-end, desde UX frontend hasta acceso seguro a datos mediante APIs backend.",
+        "highlights": [
+          "Aplicacion reactiva en Angular para flujos de encuestas",
+          "API en Java/Spring Boot respaldada por OracleDB",
+          "Exposicion segura de datos y arquitectura de acceso controlado"
+        ]
+      }
+    ]
+  },
+  "impact": {
+    "eyebrow": "Impacto destacado",
+    "title": "Casos anonimizados enfocados en resultados",
+    "cards": [
+      {
+        "title": "Entrega MWAA agnostica al entorno",
+        "description": "Automaticé Airflow en AWS MWAA con plantillas Terraform para usar un mismo modelo de configuracion entre entornos de despliegue."
+      },
+      {
+        "title": "IaaS interno para Data Engineering",
+        "description": "Entregue flujos de aprovisionamiento dinamico en AWS, Snowflake, dbt Cloud y Fivetran con seguridad como requisito central."
+      },
+      {
+        "title": "Adopcion de estrategia de testing",
+        "description": "Impulsé pruebas de integracion con Go + Terratest y pruebas de Terraform para reducir regresiones de infraestructura antes de release."
+      },
+      {
+        "title": "Liderazgo en decisiones de arquitectura",
+        "description": "Guié patrones de implementacion en iniciativas de plataforma, definiendo cuando estandarizar con Terraform y cuando elegir alternativas."
+      },
+      {
+        "title": "Integracion de sistemas cloud en Azure",
+        "description": "Construí Azure Functions y Logic Apps reutilizables para conectar sistemas internos con herramientas externas y estabilizar sincronizaciones asincronas."
+      },
+      {
+        "title": "Entrega segura de datos full-stack",
+        "description": "Desarrollé un frontend reactivo en Angular y co-desarrollé una API Java/Spring Boot con OracleDB para exponer datos recolectados de forma segura."
+      }
+    ]
+  },
+  "skills": {
+    "title": "Stack principal",
+    "groups": [
+      {
+        "category": "Cloud y plataformas de datos",
+        "items": ["AWS", "Azure", "Snowflake", "dbt Cloud", "Fivetran"]
+      },
+      {
+        "category": "Infrastructure as Code",
+        "items": ["Terraform", "Diseno de modulos", "Estandarizacion por entorno"]
+      },
+      {
+        "category": "Backend y automatizacion",
+        "items": ["Golang", "Java", "Spring Boot", "Funciones serverless"]
+      },
+      {
+        "category": "Calidad, entrega y colaboracion",
+        "items": [
+          "Terratest",
+          "Testing en Terraform",
+          "CI/CD",
+          "Decisiones de arquitectura",
+          "Mentoria tecnica"
+        ]
+      }
+    ]
+  },
+  "contact": {
+    "eyebrow": "Contacto",
+    "description": "Abierto a oportunidades de Platform Engineering.",
+    "emailCta": "Enviar email",
+    "linkedinCta": "LinkedIn"
+  }
+}
