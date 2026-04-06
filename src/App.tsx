@@ -36,23 +36,55 @@ function App() {
       </div>
 
       <header className="sticky top-0 z-30 border-b border-border/80 bg-background/90 backdrop-blur">
-        <nav className="mx-auto flex w-full max-w-6xl items-center justify-between px-5 py-4 sm:px-8">
-          <a href="#home" className="font-serif text-lg font-semibold text-foreground">
-            Mike Dro
-          </a>
-          <ul className="hidden items-center gap-7 text-sm font-medium text-muted-foreground md:flex">
+        <nav className="mx-auto flex w-full max-w-6xl flex-col gap-3 px-5 py-4 sm:px-8">
+          <div className="flex items-center justify-between">
+            <a
+              href="#home"
+              className="font-serif text-lg font-semibold text-foreground"
+            >
+              Mike Dro
+            </a>
+            <ul className="hidden items-center gap-7 text-sm font-medium text-muted-foreground md:flex">
+              <li>
+                <a className="transition-colors hover:text-foreground" href="#impact">
+                  Impact
+                </a>
+              </li>
+              <li>
+                <a className="transition-colors hover:text-foreground" href="#skills">
+                  Skills
+                </a>
+              </li>
+              <li>
+                <a className="transition-colors hover:text-foreground" href="#contact">
+                  Contact
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          <ul className="flex items-center gap-3 overflow-x-auto text-sm font-medium text-muted-foreground md:hidden">
             <li>
-              <a className="transition-colors hover:text-foreground" href="#impact">
+              <a
+                className="inline-flex rounded-full border border-border bg-surface px-3 py-1.5 transition-colors hover:text-foreground"
+                href="#impact"
+              >
                 Impact
               </a>
             </li>
             <li>
-              <a className="transition-colors hover:text-foreground" href="#skills">
+              <a
+                className="inline-flex rounded-full border border-border bg-surface px-3 py-1.5 transition-colors hover:text-foreground"
+                href="#skills"
+              >
                 Skills
               </a>
             </li>
             <li>
-              <a className="transition-colors hover:text-foreground" href="#contact">
+              <a
+                className="inline-flex rounded-full border border-border bg-surface px-3 py-1.5 transition-colors hover:text-foreground"
+                href="#contact"
+              >
                 Contact
               </a>
             </li>
