@@ -1,13 +1,11 @@
 import { useTranslation } from 'react-i18next'
-
-type SkillGroup = {
-  category: string
-  items: string[]
-}
+import { parseSkillGroups } from '@/i18n/content'
 
 function SkillsSection() {
   const { t } = useTranslation()
-  const groups = t('skills.groups', { returnObjects: true }) as SkillGroup[]
+  const groups = parseSkillGroups(
+    t('skills.groups', { returnObjects: true, defaultValue: [] })
+  )
 
   return (
     <section id="skills" className="space-y-4 text-left">

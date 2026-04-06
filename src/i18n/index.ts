@@ -9,11 +9,29 @@ const resources = {
   es: { translation: es },
 }
 
-const initialLanguage = localStorage.getItem('portfolio-language')
+const isBrowser = typeof window !== 'undefined'
+
+function getInitialLanguage() {
+  if (!isBrowser) {
+    return 'en'
+  }
+
+  const storedLanguage = window.localStorage.getItem('portfolio-language')
+
+  return storedLanguage === 'es' ? 'es' : 'en'
+}
+
+function syncHtmlLanguage(language: string) {
+  if (!isBrowser) {
+    return
+  }
+
+  document.documentElement.lang = language === 'es' ? 'es' : 'en'
+}
 
 i18n.use(initReactI18next).init({
   resources,
-  lng: initialLanguage === 'es' ? 'es' : 'en',
+  lng: getInitialLanguage(),
   fallbackLng: 'en',
   interpolation: {
     escapeValue: false,
@@ -21,7 +39,13 @@ i18n.use(initReactI18next).init({
 })
 
 i18n.on('languageChanged', (language) => {
-  localStorage.setItem('portfolio-language', language)
+  if (isBrowser) {
+    window.localStorage.setItem('portfolio-language', language)
+  }
+
+  syncHtmlLanguage(language)
 })
+
+syncHtmlLanguage(i18n.language)
 
 export default i18n

@@ -5,8 +5,55 @@ type SiteHeaderProps = {
   navItems: Array<{ id: string; label: string }>
 }
 
+type LanguageToggleProps = {
+  isSpanish: boolean
+  onSelectLanguage: (language: 'en' | 'es') => void
+}
+
+function LanguageToggle({
+  isSpanish,
+  onSelectLanguage,
+}: LanguageToggleProps) {
+  return (
+    <div className="inline-flex rounded-full border border-border bg-surface p-1 text-xs font-semibold text-muted-foreground">
+      <button
+        type="button"
+        aria-label="Switch language to English"
+        aria-pressed={!isSpanish}
+        onClick={() => onSelectLanguage('en')}
+        className={`inline-flex items-center gap-1.5 rounded-full px-2.5 py-1 transition-colors ${
+          !isSpanish
+            ? 'bg-primary text-primary-foreground'
+            : 'hover:text-foreground'
+        }`}
+      >
+        <Globe className="size-3.5" aria-hidden="true" />
+        EN
+      </button>
+      <button
+        type="button"
+        aria-label="Cambiar idioma a espanol"
+        aria-pressed={isSpanish}
+        onClick={() => onSelectLanguage('es')}
+        className={`inline-flex items-center rounded-full px-2.5 py-1 transition-colors ${
+          isSpanish
+            ? 'bg-primary text-primary-foreground'
+            : 'hover:text-foreground'
+        }`}
+      >
+        ES
+      </button>
+    </div>
+  )
+}
+
 function SiteHeader({ navItems }: SiteHeaderProps) {
   const { i18n, t } = useTranslation()
+  const isSpanish = i18n.resolvedLanguage === 'es' || i18n.language === 'es'
+
+  const handleLanguageChange = (language: 'en' | 'es') => {
+    void i18n.changeLanguage(language)
+  }
 
   return (
     <header className="sticky top-0 z-30 border-b border-border/80 bg-background/90 backdrop-blur">
@@ -30,60 +77,18 @@ function SiteHeader({ navItems }: SiteHeaderProps) {
               ))}
             </ul>
 
-            <div className="inline-flex rounded-full border border-border bg-surface p-1 text-xs font-semibold text-muted-foreground">
-              <button
-                type="button"
-                onClick={() => i18n.changeLanguage('en')}
-                className={`inline-flex items-center gap-1.5 rounded-full px-2.5 py-1 transition-colors ${
-                  i18n.language === 'en'
-                    ? 'bg-primary text-primary-foreground'
-                    : 'hover:text-foreground'
-                }`}
-              >
-                <Globe className="size-3.5" aria-hidden="true" />
-                EN
-              </button>
-              <button
-                type="button"
-                onClick={() => i18n.changeLanguage('es')}
-                className={`inline-flex items-center rounded-full px-2.5 py-1 transition-colors ${
-                  i18n.language === 'es'
-                    ? 'bg-primary text-primary-foreground'
-                    : 'hover:text-foreground'
-                }`}
-              >
-                ES
-              </button>
-            </div>
+            <LanguageToggle
+              isSpanish={isSpanish}
+              onSelectLanguage={handleLanguageChange}
+            />
           </div>
         </div>
 
         <div className="flex items-center gap-3 overflow-x-auto md:hidden">
-          <div className="inline-flex rounded-full border border-border bg-surface p-1 text-xs font-semibold text-muted-foreground">
-            <button
-              type="button"
-              onClick={() => i18n.changeLanguage('en')}
-              className={`inline-flex items-center gap-1.5 rounded-full px-2.5 py-1 ${
-                i18n.language === 'en'
-                  ? 'bg-primary text-primary-foreground'
-                  : 'hover:text-foreground'
-              }`}
-            >
-              <Globe className="size-3.5" aria-hidden="true" />
-              EN
-            </button>
-            <button
-              type="button"
-              onClick={() => i18n.changeLanguage('es')}
-              className={`inline-flex rounded-full px-2.5 py-1 ${
-                i18n.language === 'es'
-                  ? 'bg-primary text-primary-foreground'
-                  : 'hover:text-foreground'
-              }`}
-            >
-              ES
-            </button>
-          </div>
+          <LanguageToggle
+            isSpanish={isSpanish}
+            onSelectLanguage={handleLanguageChange}
+          />
 
           {navItems.map((item) => (
             <a

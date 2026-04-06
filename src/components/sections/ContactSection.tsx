@@ -32,7 +32,7 @@ function ContactSection() {
             <a
               href={siteConfig.linkedInUrl}
               target="_blank"
-              rel="noreferrer"
+              rel="noopener noreferrer"
             >
               <Globe className="size-4" />
               {t('contact.linkedinCta')}

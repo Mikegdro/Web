@@ -1,15 +1,13 @@
 import { useTranslation } from 'react-i18next'
 
 import { Card, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
-
-type ImpactCard = {
-  title: string
-  description: string
-}
+import { parseImpactCards } from '@/i18n/content'
 
 function ImpactSection() {
   const { t } = useTranslation()
-  const cards = t('impact.cards', { returnObjects: true }) as ImpactCard[]
+  const cards = parseImpactCards(
+    t('impact.cards', { returnObjects: true, defaultValue: [] })
+  )
 
   return (
     <section id="impact" className="space-y-7 text-left">

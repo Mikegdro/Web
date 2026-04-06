@@ -1,17 +1,13 @@
 import { useTranslation } from 'react-i18next'
 
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
-
-type CareerPathItem = {
-  role: string
-  period: string
-  summary: string
-  highlights: string[]
-}
+import { parseCareerPath } from '@/i18n/content'
 
 function CareerPathSection() {
   const { t } = useTranslation()
-  const timeline = t('careerPath.items', { returnObjects: true }) as CareerPathItem[]
+  const timeline = parseCareerPath(
+    t('careerPath.items', { returnObjects: true, defaultValue: [] })
+  )
 
   return (
     <section id="career" className="space-y-7 text-left">
