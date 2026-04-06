@@ -13,7 +13,7 @@ This is written as if I were onboarding a junior frontend developer into the pro
 - ⚡ `Vite`: fast dev server + production bundling
 - 🎨 `Tailwind CSS`: utility-first styling
 - 🧩 `shadcn/ui`: accessible reusable UI blocks
-- 🌍 `react-i18next` (planned): bilingual EN/ES support
+- 🌍 `react-i18next`: bilingual EN/ES support
 - 🧹 `ESLint`: code quality and consistency
 
 ---

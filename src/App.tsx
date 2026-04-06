@@ -1,48 +1,24 @@
-import { ArrowRight, Globe, Mail, Sparkles } from 'lucide-react'
+import { useTranslation } from 'react-i18next'
 
-import { Button } from '@/components/ui/button'
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardHeader,
-  CardTitle,
-} from '@/components/ui/card'
-
-const impactCards = [
-  {
-    title: 'Environment-agnostic MWAA delivery',
-    description:
-      'Automated Airflow on AWS MWAA with Terraform templates so one configuration model works across deployment environments.',
-  },
-  {
-    title: 'Internal IaaS for Data Engineering',
-    description:
-      'Delivered dynamic provisioning workflows across AWS, Snowflake, dbt Cloud, and Fivetran with security as a first-class concern.',
-  },
-  {
-    title: 'Testing strategy adoption',
-    description:
-      'Spearheaded integration testing with Go + Terratest and promoted Terraform tests to reduce infra regressions before release.',
-  },
-  {
-    title: 'Architecture decision leadership',
-    description:
-      'Led implementation patterns across platform initiatives, deciding when Terraform should be standardized and where alternative approaches were better.',
-  },
-  {
-    title: 'Cloud systems integration on Azure',
-    description:
-      'Built reusable Azure Functions and Logic Apps to connect internal systems with external tools and stabilize asynchronous synchronization workflows.',
-  },
-  {
-    title: 'Secure full-stack data delivery',
-    description:
-      'Delivered a reactive Angular survey frontend and co-developed a Java/Spring Boot API with OracleDB to expose collected data through secure services.',
-  },
-]
+import AboutSection from '@/components/sections/AboutSection'
+import CareerPathSection from '@/components/sections/CareerPathSection'
+import ContactSection from '@/components/sections/ContactSection'
+import HeroSection from '@/components/sections/HeroSection'
+import ImpactSection from '@/components/sections/ImpactSection'
+import SiteHeader from '@/components/sections/SiteHeader'
+import SkillsSection from '@/components/sections/SkillsSection'
 
 function App() {
+  const { t } = useTranslation()
+
+  const navItems = [
+    { id: 'about', label: t('nav.about') },
+    { id: 'career', label: t('nav.career') },
+    { id: 'impact', label: t('nav.impact') },
+    { id: 'skills', label: t('nav.skills') },
+    { id: 'contact', label: t('nav.contact') },
+  ]
+
   return (
     <div className="relative overflow-x-clip bg-[var(--background)]">
       <div className="pointer-events-none absolute inset-0 -z-10">
@@ -50,247 +26,17 @@ function App() {
         <div className="absolute top-56 left-[-9rem] h-72 w-72 rounded-full bg-[radial-gradient(circle,_rgba(14,116,144,0.16)_0%,_rgba(14,116,144,0)_70%)]" />
       </div>
 
-      <header className="sticky top-0 z-30 border-b border-border/80 bg-background/90 backdrop-blur">
-        <nav className="mx-auto flex w-full max-w-6xl flex-col gap-3 px-5 py-4 sm:px-8">
-          <div className="flex items-center justify-between">
-            <a
-              href="#home"
-              className="font-serif text-lg font-semibold text-foreground"
-            >
-              Mike Dro
-            </a>
-            <div className="hidden items-center gap-4 md:flex">
-              <ul className="flex items-center gap-7 text-sm font-medium text-muted-foreground">
-                <li>
-                  <a className="transition-colors hover:text-foreground" href="#about">
-                    About
-                  </a>
-                </li>
-                <li>
-                  <a className="transition-colors hover:text-foreground" href="#impact">
-                    Impact
-                  </a>
-                </li>
-                <li>
-                  <a className="transition-colors hover:text-foreground" href="#skills">
-                    Skills
-                  </a>
-                </li>
-                <li>
-                  <a className="transition-colors hover:text-foreground" href="#contact">
-                    Contact
-                  </a>
-                </li>
-              </ul>
-
-              <button
-                type="button"
-                aria-label="Language switcher coming soon"
-                className="inline-flex items-center gap-2 rounded-full border border-border bg-surface px-3 py-1.5 text-xs font-semibold text-muted-foreground"
-              >
-                <Globe className="size-3.5" aria-hidden="true" />
-                EN | ES
-              </button>
-            </div>
-          </div>
-
-          <ul className="flex items-center gap-3 overflow-x-auto text-sm font-medium text-muted-foreground md:hidden">
-            <li>
-              <button
-                type="button"
-                aria-label="Language switcher coming soon"
-                className="inline-flex items-center gap-1.5 rounded-full border border-border bg-surface px-3 py-1.5"
-              >
-                <Globe className="size-3.5" aria-hidden="true" />
-                EN | ES
-              </button>
-            </li>
-            <li>
-              <a
-                className="inline-flex rounded-full border border-border bg-surface px-3 py-1.5 transition-colors hover:text-foreground"
-                href="#about"
-              >
-                About
-              </a>
-            </li>
-            <li>
-              <a
-                className="inline-flex rounded-full border border-border bg-surface px-3 py-1.5 transition-colors hover:text-foreground"
-                href="#impact"
-              >
-                Impact
-              </a>
-            </li>
-            <li>
-              <a
-                className="inline-flex rounded-full border border-border bg-surface px-3 py-1.5 transition-colors hover:text-foreground"
-                href="#skills"
-              >
-                Skills
-              </a>
-            </li>
-            <li>
-              <a
-                className="inline-flex rounded-full border border-border bg-surface px-3 py-1.5 transition-colors hover:text-foreground"
-                href="#contact"
-              >
-                Contact
-              </a>
-            </li>
-          </ul>
-        </nav>
-      </header>
+      <SiteHeader navItems={navItems} />
 
       <main className="mx-auto flex w-full max-w-6xl flex-col gap-20 px-5 py-12 sm:px-8 sm:py-16">
-        <section id="home" className="grid items-start gap-10 lg:grid-cols-[1.2fr_0.8fr]">
-          <div className="space-y-6 text-left">
-            <div className="inline-flex items-center gap-2 rounded-full border border-border bg-surface px-3 py-1 text-xs font-semibold tracking-wide text-muted-foreground">
-              <Sparkles className="size-3.5 text-primary" aria-hidden="true" />
-              Platform Engineer | Terraform | AWS | Cloud & Backend
-            </div>
-
-            <h1 className="m-0 max-w-2xl font-serif text-5xl leading-[1.08] tracking-tight text-foreground sm:text-6xl">
-              Building secure, scalable platform foundations for data teams.
-            </h1>
-
-            <p className="max-w-xl text-base text-muted-foreground sm:text-lg">
-              I design and automate cloud infrastructure products that improve
-              reliability, delivery speed, and developer experience across
-              modern data platforms.
-            </p>
-
-            <div className="flex flex-wrap items-center gap-3">
-              <Button className="group" asChild>
-                <a href="#contact">
-                  Let&apos;s connect
-                  <ArrowRight className="size-4 transition-transform group-hover:translate-x-0.5" />
-                </a>
-              </Button>
-              <Button variant="outline" asChild>
-                <a href="#impact">View impact highlights</a>
-              </Button>
-            </div>
-          </div>
-
-          <Card className="border-border/80 bg-surface/90 text-left shadow-[var(--shadow-card)]">
-            <CardHeader>
-              <CardTitle className="text-xl">Career Snapshot</CardTitle>
-              <CardDescription>
-                Full-stack foundations {'->'} Cloud integration engineering
-                {'->'} Platform leadership.
-              </CardDescription>
-            </CardHeader>
-            <CardContent className="space-y-3 text-sm text-muted-foreground">
-              <p>
-                I currently build product-style infrastructure with Terraform,
-                Go, and AWS, with a strong focus on security and standardization.
-              </p>
-              <p>
-                I also mentor teammates, shape architecture decisions, and
-                coordinate cross-team implementation workflows.
-              </p>
-            </CardContent>
-          </Card>
-        </section>
-
-        <section id="about" className="space-y-4 text-left">
-          <h2 className="m-0 text-3xl font-semibold text-foreground sm:text-4xl">
-            About
-          </h2>
-          <p className="max-w-3xl text-base leading-relaxed text-muted-foreground sm:text-lg">
-            I enjoy building platform products that let engineering teams move
-            faster without compromising reliability or security. My experience
-            spans full-stack delivery, cloud integrations, and platform
-            engineering, with a strong focus on reusable infrastructure,
-            maintainable workflows, and measurable delivery outcomes.
-          </p>
-        </section>
-
-        <section id="impact" className="space-y-7 text-left">
-          <div className="space-y-2">
-            <p className="text-sm font-semibold uppercase tracking-wide text-primary">
-              Selected impact
-            </p>
-            <h2 className="m-0 text-3xl font-semibold text-foreground sm:text-4xl">
-              Anonymized, outcome-focused case highlights
-            </h2>
-          </div>
-
-          <div className="grid gap-5 md:grid-cols-2">
-            {impactCards.map((card) => (
-              <Card
-                key={card.title}
-                className="border-border/80 bg-surface/90 text-left shadow-[var(--shadow-card)] transition-transform duration-200 hover:-translate-y-1"
-              >
-                <CardHeader className="space-y-2">
-                  <CardTitle className="text-xl leading-tight text-foreground">
-                    {card.title}
-                  </CardTitle>
-                  <CardDescription className="text-sm leading-relaxed text-muted-foreground">
-                    {card.description}
-                  </CardDescription>
-                </CardHeader>
-              </Card>
-            ))}
-          </div>
-        </section>
-
-        <section id="skills" className="space-y-4 text-left">
-          <h2 className="m-0 text-3xl font-semibold text-foreground sm:text-4xl">
-            Core stack
-          </h2>
-          <div className="flex flex-wrap gap-2.5 text-sm text-foreground">
-            {[
-              'Terraform',
-              'AWS',
-              'Golang',
-              'Terratest',
-              'CI/CD',
-              'Platform Engineering',
-              'Security by Design',
-            ].map((skill) => (
-              <span
-                key={skill}
-                className="rounded-full border border-border bg-surface px-3 py-1.5"
-              >
-                {skill}
-              </span>
-            ))}
-          </div>
-        </section>
+        <HeroSection />
+        <AboutSection />
+        <CareerPathSection />
+        <ImpactSection />
+        <SkillsSection />
       </main>
 
-      <footer
-        id="contact"
-        className="border-t border-border/80 bg-surface/70 px-5 py-10 sm:px-8"
-      >
-        <div className="mx-auto flex w-full max-w-6xl flex-col items-start justify-between gap-4 text-left sm:flex-row sm:items-center">
-          <div>
-            <p className="text-sm font-semibold uppercase tracking-wide text-primary">
-              Contact
-            </p>
-            <p className="text-base text-muted-foreground">
-              Open to platform engineering opportunities.
-            </p>
-          </div>
-          <Button asChild>
-            <a href="mailto:miguelgdro@gmail.com">
-              <Mail className="size-4" />
-              Send email
-            </a>
-          </Button>
-          <Button variant="outline" asChild>
-            <a
-              href="https://www.linkedin.com/in/mgdro/"
-              target="_blank"
-              rel="noreferrer"
-            >
-              <Globe className="size-4" />
-              LinkedIn
-            </a>
-          </Button>
-        </div>
-      </footer>
+      <ContactSection />
     </div>
   )
 }
