@@ -120,13 +120,66 @@ Use anonymized impact cards instead of public repositories.
 
 ## 10) UI/UX Direction
 
-- Clean light professional look
-- Subtle accent color and high readability
-- Card-based layout for impact section
-- Fast scan in < 30 seconds
-- Responsive for desktop and mobile
+- Clean, editorial, light-theme-first look inspired by `lay.codes/about`.
+- Typography-led hierarchy with visible contrast between headings and body copy.
+- Warm neutral surfaces plus selective gradient accents for emphasis.
+- Card-based layout for impact highlights, skills, and career path snapshots.
+- Fast scan in < 30 seconds for recruiters while preserving personality.
+- Responsive behavior for desktop and mobile from first implementation.
 
-## 11) Technical Plan
+## 11) Design Blueprint (Inspired by lay.codes)
+
+### Visual principles to adapt (not copy)
+
+- Editorial feel: bold heading style + clear supporting body text.
+- Light, calm canvas: avoid dark-mode dependency as the default presentation.
+- Intentional accents: use gradients only for CTAs, chips, and section markers.
+- Comfortable rhythm: generous whitespace, clean section separators, readable line lengths.
+
+### Typography system
+
+- Heading family: expressive serif (example: Fraunces or equivalent).
+- Body/UI family: modern sans-serif (example: Inter or equivalent).
+- Scale target:
+  - Hero title: 48-64px desktop, 34-42px mobile.
+  - Section headings: 28-36px desktop, 22-28px mobile.
+  - Body text: 16-18px with strong line-height.
+
+### Color direction
+
+- Base background: warm near-white (paper-like).
+- Text colors:
+  - Primary: deep slate/ink.
+  - Secondary: cool gray for supportive text.
+- Accent range:
+  - Coral/red-orange gradient for primary actions.
+  - Optional cool accent (teal/cyan) for secondary highlights.
+- Rule: keep gradients decorative, never as the main reading background.
+
+### Layout and components
+
+- Top navigation: minimal, sticky on scroll, anchor links.
+- Hero block: title, concise value proposition, two CTAs.
+- Impact grid: 2-column desktop / 1-column mobile cards.
+- Skills: grouped chips or compact cards.
+- Career path: vertical timeline or stacked milestone cards.
+- Contact footer: plain and direct (email + LinkedIn).
+
+### Motion and interaction
+
+- Subtle entrance animation on first load (fade + slight translate).
+- Section reveal on scroll with short duration.
+- Card hover: shadow + small lift only.
+- Respect reduced-motion preferences (`prefers-reduced-motion`).
+
+### Accessibility guardrails
+
+- Keep contrast AA+ for body text and controls.
+- Preserve clear `:focus-visible` outlines.
+- Keep heading order semantic and consistent.
+- Ensure language toggle is keyboard accessible.
+
+## 12) Technical Plan
 
 - Stack: React + TypeScript + Vite + Tailwind + shadcn/ui
 - i18n: `react-i18next` with EN/ES JSON files
@@ -137,7 +190,7 @@ Use anonymized impact cards instead of public repositories.
   - `src/content/en.json`
   - `src/content/es.json`
 
-## 12) Delivery Plan (5 Days)
+## 13) Delivery Plan (5 Days)
 
 ### Day 1
 
@@ -148,12 +201,14 @@ Use anonymized impact cards instead of public repositories.
 ### Day 2
 
 - Implement Hero, About, Career Path, Skills
-- Establish typography, spacing, and card system
+- Establish typography tokens (serif + sans), spacing rhythm, and card system
+- Implement light editorial shell (warm background + restrained gradient accents)
 
 ### Day 3
 
 - Implement 6 impact cards and contact section
 - Add sticky navigation and CTA flow
+- Add interaction polish (hover, reveal, and focus states)
 
 ### Day 4
 
@@ -166,15 +221,17 @@ Use anonymized impact cards instead of public repositories.
 - Accessibility/performance pass
 - Final content review for hiring clarity
 - Deploy to Vercel and verify metadata/preview
+- Final visual QA against design blueprint (readability, rhythm, consistency)
 
-## 13) Success Criteria
+## 14) Success Criteria
 
 - Role fit is clear to recruiters in under 30 seconds
 - Portfolio communicates platform impact without NDA risk
 - EN and ES content both complete
 - Live, responsive site deployed on Vercel free tier
+- Visual tone feels intentional and differentiated (not generic template look)
 
-## 14) Next Iterations (v2+)
+## 15) Next Iterations (v2+)
 
 - Add technical writeups (architecture/process learnings)
 - Add downloadable CV (EN/ES)
