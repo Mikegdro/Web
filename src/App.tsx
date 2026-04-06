@@ -1,4 +1,4 @@
-import { ArrowRight, Mail, Sparkles } from 'lucide-react'
+import { ArrowRight, Globe, Mail, Sparkles } from 'lucide-react'
 
 import { Button } from '@/components/ui/button'
 import {
@@ -25,6 +25,21 @@ const impactCards = [
     description:
       'Spearheaded integration testing with Go + Terratest and promoted Terraform tests to reduce infra regressions before release.',
   },
+  {
+    title: 'Architecture decision leadership',
+    description:
+      'Led implementation patterns across platform initiatives, deciding when Terraform should be standardized and where alternative approaches were better.',
+  },
+  {
+    title: 'Cloud systems integration on Azure',
+    description:
+      'Built reusable Azure Functions and Logic Apps to connect internal systems with external tools and stabilize asynchronous synchronization workflows.',
+  },
+  {
+    title: 'Secure full-stack data delivery',
+    description:
+      'Delivered a reactive Angular survey frontend and co-developed a Java/Spring Boot API with OracleDB to expose collected data through secure services.',
+  },
 ]
 
 function App() {
@@ -44,26 +59,60 @@ function App() {
             >
               Mike Dro
             </a>
-            <ul className="hidden items-center gap-7 text-sm font-medium text-muted-foreground md:flex">
-              <li>
-                <a className="transition-colors hover:text-foreground" href="#impact">
-                  Impact
-                </a>
-              </li>
-              <li>
-                <a className="transition-colors hover:text-foreground" href="#skills">
-                  Skills
-                </a>
-              </li>
-              <li>
-                <a className="transition-colors hover:text-foreground" href="#contact">
-                  Contact
-                </a>
-              </li>
-            </ul>
+            <div className="hidden items-center gap-4 md:flex">
+              <ul className="flex items-center gap-7 text-sm font-medium text-muted-foreground">
+                <li>
+                  <a className="transition-colors hover:text-foreground" href="#about">
+                    About
+                  </a>
+                </li>
+                <li>
+                  <a className="transition-colors hover:text-foreground" href="#impact">
+                    Impact
+                  </a>
+                </li>
+                <li>
+                  <a className="transition-colors hover:text-foreground" href="#skills">
+                    Skills
+                  </a>
+                </li>
+                <li>
+                  <a className="transition-colors hover:text-foreground" href="#contact">
+                    Contact
+                  </a>
+                </li>
+              </ul>
+
+              <button
+                type="button"
+                aria-label="Language switcher coming soon"
+                className="inline-flex items-center gap-2 rounded-full border border-border bg-surface px-3 py-1.5 text-xs font-semibold text-muted-foreground"
+              >
+                <Globe className="size-3.5" aria-hidden="true" />
+                EN | ES
+              </button>
+            </div>
           </div>
 
           <ul className="flex items-center gap-3 overflow-x-auto text-sm font-medium text-muted-foreground md:hidden">
+            <li>
+              <button
+                type="button"
+                aria-label="Language switcher coming soon"
+                className="inline-flex items-center gap-1.5 rounded-full border border-border bg-surface px-3 py-1.5"
+              >
+                <Globe className="size-3.5" aria-hidden="true" />
+                EN | ES
+              </button>
+            </li>
+            <li>
+              <a
+                className="inline-flex rounded-full border border-border bg-surface px-3 py-1.5 transition-colors hover:text-foreground"
+                href="#about"
+              >
+                About
+              </a>
+            </li>
             <li>
               <a
                 className="inline-flex rounded-full border border-border bg-surface px-3 py-1.5 transition-colors hover:text-foreground"
@@ -144,6 +193,19 @@ function App() {
           </Card>
         </section>
 
+        <section id="about" className="space-y-4 text-left">
+          <h2 className="m-0 text-3xl font-semibold text-foreground sm:text-4xl">
+            About
+          </h2>
+          <p className="max-w-3xl text-base leading-relaxed text-muted-foreground sm:text-lg">
+            I enjoy building platform products that let engineering teams move
+            faster without compromising reliability or security. My experience
+            spans full-stack delivery, cloud integrations, and platform
+            engineering, with a strong focus on reusable infrastructure,
+            maintainable workflows, and measurable delivery outcomes.
+          </p>
+        </section>
+
         <section id="impact" className="space-y-7 text-left">
           <div className="space-y-2">
             <p className="text-sm font-semibold uppercase tracking-wide text-primary">
@@ -154,7 +216,7 @@ function App() {
             </h2>
           </div>
 
-          <div className="grid gap-5 md:grid-cols-2 xl:grid-cols-3">
+          <div className="grid gap-5 md:grid-cols-2">
             {impactCards.map((card) => (
               <Card
                 key={card.title}
@@ -212,9 +274,19 @@ function App() {
             </p>
           </div>
           <Button asChild>
-            <a href="mailto:hello@example.com">
+            <a href="mailto:miguelgdro@gmail.com">
               <Mail className="size-4" />
               Send email
+            </a>
+          </Button>
+          <Button variant="outline" asChild>
+            <a
+              href="https://www.linkedin.com/in/mgdro/"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <Globe className="size-4" />
+              LinkedIn
             </a>
           </Button>
         </div>
