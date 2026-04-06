@@ -11,8 +11,8 @@ This is written as if I were onboarding a junior frontend developer into the pro
 - ⚛️ `React`: component model for building UI
 - 🔷 `TypeScript`: static typing for safer development
 - ⚡ `Vite`: fast dev server + production bundling
-- 🎨 `Tailwind CSS` (planned): utility-first styling
-- 🧩 `shadcn/ui` (planned): accessible reusable UI blocks
+- 🎨 `Tailwind CSS`: utility-first styling
+- 🧩 `shadcn/ui`: accessible reusable UI blocks
 - 🌍 `react-i18next` (planned): bilingual EN/ES support
 - 🧹 `ESLint`: code quality and consistency
 
